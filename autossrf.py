@@ -6,9 +6,14 @@ import os
 import threading
 import random
 
+#execPath = os.getcwd()
+#currentPath = os.path.dirname(__file__)
+#os.chdir(currentPath)
 execPath = os.getcwd()
-currentPath = os.path.dirname(__file__)
-os.chdir(currentPath)
+currentPath = os.path.dirname(__file__) if __file__ else None
+
+if currentPath:
+    os.chdir(currentPath)
 
 FUZZ_PLACE_HOLDER = '??????'
 TIMEOUT_DELAY = 5
